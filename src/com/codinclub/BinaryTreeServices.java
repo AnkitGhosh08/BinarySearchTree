@@ -17,6 +17,7 @@ public class BinaryTreeServices {
      * 1. First we create a newNode for the data.
      * 2. Then we call the insertAll method.
      * 3. Then we call the display method to print the BST.
+     *
      * @param data - We are passing the data to insert.
      */
     public void insert(int data) {
@@ -33,6 +34,7 @@ public class BinaryTreeServices {
      * 2. If the node is less that the root then the node will be entered to the left
      * 3. If the node is greater that the root then the node will be entered to the right
      * 4. After inserting we will return the node
+     *
      * @param root - Here we pass the root node
      * @param node - Here we pass the node to insert
      * @return -  We get the node output with implemented BST
@@ -56,6 +58,7 @@ public class BinaryTreeServices {
      * [3] Method display to display the BST
      * 1. If root is null then we will return
      * 2. Else we will display the left and then root and then the right child.
+     *
      * @param root -  we pass the root to display the BST.
      */
     public void display(Node root) {
@@ -66,6 +69,7 @@ public class BinaryTreeServices {
         System.out.print(" " + root.data);
         display(root.right);
     }
+
     /**
      * [4] Method inorder to display the BST inorder. In inorder we display first left then data and then the right child.
      * 1. We pass the node and then call the method inorder and check left or right
@@ -107,12 +111,26 @@ public class BinaryTreeServices {
     public void postorder() {
         postorder(root);
     }
-
     private void postorder(Node r) {
         if (r != null) {
             postorder(r.left);
             postorder(r.right);
             System.out.print(r.data + " ");
         }
+    }
+    /**
+     * [7] Method size to check the size of the BST
+     * 1. If root is null then the BST is empty and will return 0
+     * 2. We add the right and the left child and the root
+     */
+    public void size() {
+        System.out.println("\n The size of the tree is: " + sizeAll(root));
+    }
+    public int sizeAll(Node root) {
+
+        if (root == null)
+            return 0;
+
+        return sizeAll(root.left) + sizeAll(root.right) + 1;
     }
 }
