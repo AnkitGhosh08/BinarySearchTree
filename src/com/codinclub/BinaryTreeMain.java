@@ -27,5 +27,6 @@ public class BinaryTreeMain {
         obj.inorder();
 
         obj.size();
+        obj.search(63);
     }
 }
